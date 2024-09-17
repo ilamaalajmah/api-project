@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</Article> </title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #D8BFD8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            padding-right: 30px;
+            background-color: #978597;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        body::before {
+            content: "";
+            display: block;
+            height: 80px;
+        }
+
+        .container {
+            max-width: 430px;
+            width: 100%;
+            background: #fff;
+            border-radius: 7px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            margin: 3rem auto 0;
+        }
+
+        .container header {
+            font-size: 2rem;
+            font-weight: 500;
+            text-align: center;
+            color: #978597;
+            margin-bottom: 1.5rem;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container label {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .container input,
+        .container textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .container input[type="text"] {
+            height: 40px;
+        }
+
+        .container textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .container button {
+            background: #978597;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.4s;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+        }
+
+        .container button:hover {
+            background: #D8BFD8;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <a href="#">Article.</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="article.html">Articles</a></li>
+            <li><a href="login.html">SignIn</a></li>
+            <li><a href="register.html">Signup</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="container new-article">
+        <header>Publish New Article</Article> <Article></Article></header>
+        <form id="newArticleForm">
+            <label for="articleName">The Title:</label>
+            <input type="text" id="articleName" required>
+            <label for="articleDescription">The Description:</label>
+            <textarea id="articleDescription" required></textarea>
+            <label for="articleImage">The Url Of The Photo</label>
+            <input type="text" id="articleImage">
+            <button type="submit" class="button">Publish</button>
+        </form>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

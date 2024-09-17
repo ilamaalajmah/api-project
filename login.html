@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+
+    <nav id="navbar">
+        <div class="logo">
+            <a href="#">Article.</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="article.html">Articles</a></li>
+            <li><a href="login.html">SignIn</a></li>
+            <li><a href="register.html">Signup</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="login form">
+            <header style="color: #978597;">SignIn</header>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                <span class="error" id="loginEmailError"></span>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                <span class="error" id="loginPasswordError"></span>
+                <input type="submit" class="button" value="Login">
+            </form>
+            <div class="signup">
+                <span>Don't have an account? <a href="./register.html">Signup</a></span>
+            </div>
+        </div>
+    </div>
+
+  
+    </script>
+    <script src="./main.js"></script>
+</body>
+</html>

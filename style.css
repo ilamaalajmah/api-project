@@ -1,0 +1,366 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #D8BFD8;
+    display: flex;
+    flex-direction: column; /* Allow body content to stack vertically */
+    min-height: 100vh; /* Ensure the body takes full height */
+    margin: 0; /* Remove default margin */
+}
+
+/* Header Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-right: 30px; /* Add space on the right */
+    background-color: #978597;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fix the header at the top */
+    top: 0; /* Align the header to the top */
+    left: 0; /* Align the header to the left */
+    z-index: 1000; /* Ensure the header is above other content */
+}
+
+/* Ensure header does not overlap content */
+body::before {
+    content: "";
+    display: block;
+    height: 80px; /* Adjust this value if your header height changes */
+}
+
+/* Styling for logo and navigation links */
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-right: 30px; /* Add space on the right for links */
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.burger {
+    display: none;
+}
+
+/* Burger Menu Styles */
+@media (max-width: 768px) {
+    nav {
+        padding-right: 10px; /* Reduce space on the right for smaller screens */
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #978597;
+        width: calc(100% - 10px); /* Adjust width considering reduced padding */
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+        z-index: 1001; /* Ensure burger is above nav links */
+    }
+
+    .line1, .line2, .line3 {
+        background: white;
+        height: 3px;
+        width: 25px;
+        margin: 5px;
+        transition: 0.3s;
+    }
+
+    .line1.active {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .line2.active {
+        opacity: 0;
+    }
+
+    .line3.active {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Container Styles */
+.container {
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 3rem auto 0; /* Adjust spacing from the top and center align */
+}
+
+/* Form Styles */
+.form header {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.profile-picture img{
+    width: 80px;
+}
+
+.form input {
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.form input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form input.button {
+    color: #fff;
+    background: #978597;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 1.7rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.form input.button:hover {
+    background: #D8BFD8;
+}
+
+.signup {
+    font-size: 17px;
+    text-align: center;
+}
+
+.signup a {
+    text-decoration: none;
+    color: #978597;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+/* Article Form Styles */
+.article-form {
+    margin-bottom: 2rem;
+
+}
+.article h2{
+    color: #4b474b;
+    text-align: center;
+    font-weight: 600;
+}
+.article p {
+    color: #978597;
+    text-align: center;
+
+    
+}
+.article-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.article-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-form input,
+.article-form textarea {
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.article-form input[type="file"] {
+    margin-bottom: 1rem;
+}
+
+.article-form input.button {
+    background: #978597;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.4s;
+}
+
+.article-form input.button:hover {
+    background: #D8BFD8;
+}
+
+.article-list {
+    margin-top: 2rem;
+}
+
+.article-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+}
+
+.article-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Error Messages */
+.error-message {
+    color: #978597;
+    font-size: 14px;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Styles for Sign-In and Sign-Up Forms */
+/* General styles for #articlesContainer */
+#articlesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #a090a0; /* Default border size */
+    margin: 20px; 
+}
+
+/* Center the image and adjust its size */
+#articlesContainer img {
+    width: 350px;
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 0 auto; /* Center the image horizontally within the container */
+}
+
+/* Styles for devices with a max-width of 768px */
+@media (max-width: 768px) {
+    #articlesContainer {
+        border: 3px solid #a090a0; /* Smaller border size */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    #articlesContainer img {
+        width: 100%; /* Ensure the image adjusts to the width of the container */
+    }
+
+}
+
+
+@media (min-width: 769px) {
+    .form {
+        max-width: 800px;
+        margin: 3rem auto;
+    }
+
+    .form input {
+        width: 400px; /* Set width to 400px on larger screens */
+    }
+    #registerForm .button {
+        width: 440px; /* Set width to 440px on larger screens */
+    }
+    #loginForm .button {
+        width: 440px; /* Set width to 440px on larger screens */
+    }
+}
+
+/* General styles for card container */
+#articlesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Spacing between cards */
+    padding: 20px; /* Padding around the container */
+}
+
+/* Card styles */
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure content doesn't overflow */
+    width: 300px; /* Set a fixed width for cards */
+    transition: transform 0.3s; /* Transition effect for hover */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale up when hovered */
+}
+
+.card-img-top {
+    width: 100%; /* Make image take the full card width */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Cover the area nicely */
+}
+
+.card-body {
+    padding: 15px; /* Padding inside the card body */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Font size for title */
+    margin-bottom: .75rem; /* Margin below title */
+}
+
+.card-text {
+    color: #666; /* Text color for description */
+}
+
+ 
+.delete-button {
+    background-color: #978597; /* نفس لون الخلفية المستخدم في الأزرار */
+    color: white; /* لون النص أبيض */
+    border: none; /* بدون حدود */
+    padding: 10px 20px; /* بعض التباعد الداخلي */
+    font-size: 16px; /* حجم النص */
+    border-radius: 5px; /* زوايا مدورة */
+    cursor: pointer; /* مؤشر اليد عند التمرير */
+    transition: background 0.4s; /* انتقال سلس عند تغيير الخلفية */
+    margin-top: 10px; /* بعض المسافة العلوية */
+    display: block; /* عرض الزر كعنصر بلوك */
+    width: 100%; /* عرض كامل داخل الحاوية */
+}
+
+.delete-button:hover {
+    background-color: #D8BFD8; /* تغيير اللون عند التمرير */
+}
+
+.delete-button:active {
+    background-color: #CBAACB; /* لون أغمق عند النقر */
+}
+
+

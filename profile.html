@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Inline styles */
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <a href="#">Article.</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="article.html">Articles</a></li>
+            <li><a href="login.html">SignIn</a></li>
+            <li><a href="register.html">Signup</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container" style="padding: 80px;">
+        <h1 style="color: #978597;">Personal Profile</h1>
+        <div class="card">
+            <p style="color: #978597; padding-left: 10px;">Name: <span id="name">error</span></p>
+            <p style="color: #978597;padding-left: 10px;">The Email: <span id="email">error</span></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            document.getElementById('name').textContent = user.name || 'error';
+            document.getElementById('email').textContent = user.email || 'error';
+        });
+    </script>
+</body>
+</html>
